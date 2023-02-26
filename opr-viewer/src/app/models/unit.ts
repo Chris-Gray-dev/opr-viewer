@@ -1,4 +1,4 @@
-import { KeywordKey } from './keyword-key';
+import { KeywordKey } from './keyword';
 
 export interface Unit {
   id: string;

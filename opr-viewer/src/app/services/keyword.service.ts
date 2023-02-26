@@ -34,4 +34,17 @@ export class KeywordService {
     console.error('Keywords are not loaded');
     return this.nullObj;
   }
+
+  checkForKeywords(text: string): Keyword[] {
+    let keywords: Keyword[] = [];
+    const words = text.split(' ');
+    keywords.push(
+      ...words.map((w) => {
+        w = w.split('(')[0];
+        return this.getKeywordByName(w);
+      })
+    );
+
+    return keywords.filter((kw) => kw != this.nullObj);
+  }
 }

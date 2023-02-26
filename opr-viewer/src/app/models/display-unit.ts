@@ -1,4 +1,5 @@
-import { Keyword } from './keyword';
+import { KeywordDisplay } from './keyword';
+import { Spell } from './spell';
 import { Weapon } from './weapon';
 
 // Clean version of a unit, used for displaying data
@@ -9,5 +10,7 @@ export interface DisplayUnit {
   defense: number;
   weapons: Weapon[];
   gameSystem: string;
-  specialRules: Keyword[];
+  specialRules: KeywordDisplay[];
+  spells?: Spell[];
+  extraRules?: KeywordDisplay[];
 }
